@@ -1,6 +1,5 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class TicketRepositoryTest {
@@ -15,7 +14,7 @@ class TicketRepositoryTest {
         Ticket ticket4 = new Ticket(4, "MSK", "SPB", 400, 122);
         Ticket ticket5 = new Ticket(5, "UFA", "SPB", 800, 222);
         Ticket ticket6 = new Ticket(6, "MSK", "SPB", 200, 130);
-        Ticket ticket7 = new Ticket(7, "NEW", "LA",  300, 243);
+        Ticket ticket7 = new Ticket(7, "NEW", "LA", 300, 243);
         Ticket ticket8 = new Ticket(8, "MSK", "SPB", 500, 99);
         repo.add(ticket1);
         repo.add(ticket2);
@@ -26,10 +25,10 @@ class TicketRepositoryTest {
         repo.add(ticket7);
         repo.add(ticket8);
 
-        Ticket[] expected = {ticket1,ticket2, ticket3, ticket4, ticket5, ticket6, ticket7, ticket8};
+        Ticket[] expected = {ticket1, ticket2, ticket3, ticket4, ticket5, ticket6, ticket7, ticket8};
         Ticket[] actual = repo.findAll();
 
-        Assertions.assertArrayEquals(expected, actual);
+        assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -42,7 +41,7 @@ class TicketRepositoryTest {
         Ticket ticket4 = new Ticket(4, "MSK", "SPB", 400, 122);
         Ticket ticket5 = new Ticket(5, "UFA", "SPB", 800, 222);
         Ticket ticket6 = new Ticket(6, "MSK", "SPB", 200, 130);
-        Ticket ticket7 = new Ticket(7, "NEW", "LA",  300, 243);
+        Ticket ticket7 = new Ticket(7, "NEW", "LA", 300, 243);
         Ticket ticket8 = new Ticket(8, "MSK", "SPB", 500, 99);
 
         repo.add(ticket5);
@@ -53,7 +52,7 @@ class TicketRepositoryTest {
         Ticket[] expected = {ticket5, ticket6, ticket7, ticket8};
         Ticket[] actual = repo.findAll();
 
-        Assertions.assertArrayEquals(expected, actual);
+        assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -66,7 +65,7 @@ class TicketRepositoryTest {
         Ticket ticket4 = new Ticket(4, "MSK", "SPB", 400, 122);
         Ticket ticket5 = new Ticket(5, "UFA", "SPB", 800, 222);
         Ticket ticket6 = new Ticket(6, "MSK", "SPB", 200, 130);
-        Ticket ticket7 = new Ticket(7, "NEW", "LA",  300, 243);
+        Ticket ticket7 = new Ticket(7, "NEW", "LA", 300, 243);
         Ticket ticket8 = new Ticket(8, "MSK", "SPB", 500, 99);
         repo.add(ticket1);
         repo.add(ticket2);
@@ -77,10 +76,10 @@ class TicketRepositoryTest {
         repo.add(ticket7);
         repo.add(ticket8);
 
-        Ticket[] expected = {ticket1,ticket2, ticket3, ticket4, ticket5, ticket6, ticket7, ticket8};
+        Ticket[] expected = {ticket1, ticket2, ticket3, ticket4, ticket5, ticket6, ticket7, ticket8};
         Ticket[] actual = repo.deleteById(5);
 
-        Assertions.assertArrayEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
 }

@@ -4,10 +4,6 @@ public class TicketRepository {
 
     private Ticket[] tickets = new Ticket[0];
 
-    public Ticket[] findAll() { return tickets;}
-
-
-
     public void add(Ticket ticket) {
         Ticket[] tmp = new Ticket[tickets.length + 1];
         for (int i = 0; i < tickets.length; i++) {
@@ -15,6 +11,10 @@ public class TicketRepository {
         }
         tmp[tmp.length - 1] = ticket;
         tickets = tmp;
+    }
+
+    public Ticket[] findAll() {
+        return tickets;
     }
 
     public Ticket[] deleteById(int deleteId) {
@@ -30,3 +30,4 @@ public class TicketRepository {
         return tmp;
     }
 }
+
