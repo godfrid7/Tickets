@@ -76,10 +76,10 @@ class TicketRepositoryTest {
         repo.add(ticket7);
         repo.add(ticket8);
 
-        Ticket[] expected = {ticket1, ticket2, ticket3, ticket4, ticket5, ticket6, ticket7, ticket8};
+        Ticket[] expected = {ticket1, ticket2, ticket3, ticket4, ticket6, ticket7, ticket8};
         Ticket[] actual = repo.deleteById(5);
 
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertArrayEquals(expected, actual);
     }
 
 }
